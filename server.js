@@ -42,12 +42,12 @@ app.get('/', function(req,res){
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Simple To-Do App</title>
+          <title>6th Sem Tasks</title>
           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         </head>
         <body>
           <div class="container">
-            <h1 class="display-4 text-center py-1">To-Do App</h1>
+            <h1 class="display-4 text-center py-1">6th Sem Tasks</h1>
             
             <div class="jumbotron p-3 shadow-sm">
               <form id ="create-form" action="/create-item" method="POST">
@@ -85,7 +85,7 @@ app.post('/create-item',function(req,res){
 })
 app.post('/update-item',function(req,res){
    let safeText = sanitizeHTML(req.body.text, {allowedTags: [],allowedAttributes: {}})
-    db.collection('Items').findOneAndUpdate({_id: new mongodb.ObjectId(req.body.id)},{$set: {text: safetext}},function(){
+    db.collection('Items').findOneAndUpdate({_id: new mongodb.ObjectId(req.body.id)},{$set: {text: safeText}},function(){
       res.send("sucess")
     })
   

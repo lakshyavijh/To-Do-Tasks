@@ -24,6 +24,7 @@ app.use(express.urlencoded({extended:false}))
 function passwordProtected(req,res,next){
   res.set('WWW-Authenticate', 'Basic realm="Simple todo app" ')
   console.log(req.headers.authorization)
+  // id= learn and pass: javascript
   if(req.headers.authorization == "Basic bGVhcm46amF2YXNjcmlwdA==") {
     next()
   }

@@ -32,6 +32,7 @@ document.getElementById("create-form").addEventListener("submit",function(e){
 document.addEventListener("click",function(e){
    //delete feature
    if(e.target.classList.contains("delete-me")) {
+       
        if(confirm("Do you really want to delete")){
         axios.post('/delete-item',{id: e.target.getAttribute("data-id")}).then(function(){
             e.target.parentElement.parentElement.remove()
